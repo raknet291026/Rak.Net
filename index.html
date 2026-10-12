@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505"><meta name="description" content="РАКНЕТ — скоро. 29.10.2026, 00:00.">
+<title>РАКНЕТ — 29.10.26</title>
+<style>
+:root{color-scheme:dark;--white:#f4f4f1;--muted:#777}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#050505;color:var(--white);font-family:Arial,Helvetica,sans-serif}body{min-height:100svh;overflow:hidden}.rain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.72}.grain,.scanlines{position:fixed;inset:0;pointer-events:none;z-index:5}.grain{opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}.scanlines{opacity:.09;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff 4px,transparent 5px 7px);mix-blend-mode:overlay}.page{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 22px 24px;isolation:isolate}.page:before{content:"";position:absolute;width:min(78vw,740px);aspect-ratio:1;top:50%;left:50%;transform:translate(-50%,-55%);background:radial-gradient(circle,rgba(255,255,255,.085),rgba(255,255,255,.025) 36%,transparent 68%);filter:blur(12px);z-index:-1}.topline{position:absolute;top:28px;left:30px;right:30px;display:flex;justify-content:space-between;gap:16px;font:10px/1.4 monospace;letter-spacing:.2em;color:#8b8b8b;text-transform:uppercase}.status{display:flex;align-items:center;gap:9px}.dot{width:6px;height:6px;background:#f4f4f1;border-radius:50%;box-shadow:0 0 12px #fff;animation:pulse 1.8s infinite}.moon{width:clamp(125px,19vw,220px);height:auto;object-fit:contain;filter:drop-shadow(0 0 22px #ffffff22);animation:float 7s ease-in-out infinite;opacity:.94;margin:12px 0 22px}.logo{display:block;width:min(76vw,620px);height:auto;max-height:112px;object-fit:contain;filter:drop-shadow(0 0 15px #fff1);margin:0 auto 14px}.eyebrow{font:10px/1.5 monospace;letter-spacing:.42em;color:#8c8c8c;text-transform:uppercase;margin:0 0 36px 4px}.countdown{display:flex;align-items:flex-start;justify-content:center;gap:clamp(12px,3.4vw,42px);margin:0 0 30px;font-variant-numeric:tabular-nums}.unit{text-align:center;min-width:clamp(48px,8vw,94px)}.num{font-family:Impact,'Arial Narrow',sans-serif;font-size:clamp(46px,9.3vw,108px);line-height:.92;letter-spacing:-.035em;font-weight:400}.label{margin-top:14px;color:#777;font:9px/1 monospace;letter-spacing:.25em;text-transform:uppercase}.colon{font:clamp(30px,6vw,65px)/.8 monospace;color:#666;margin-top:5px;animation:blink 1.2s steps(2,end) infinite}.date{font:11px/1.5 monospace;letter-spacing:.24em;color:#c8c8c8;text-align:center}.date strong{color:#fff;font-weight:400}.bottom{position:absolute;bottom:27px;left:30px;right:30px;display:flex;justify-content:space-between;align-items:end;gap:20px;color:#666;font:9px/1.6 monospace;letter-spacing:.16em;text-transform:uppercase}.bottom span:last-child{text-align:right}.line{position:absolute;left:50%;bottom:68px;transform:translateX(-50%);height:1px;width:min(40vw,300px);background:linear-gradient(90deg,transparent,#777,transparent);opacity:.5}.glitch{animation:glitch 5s infinite}.ended{font-size:clamp(28px,6vw,62px);letter-spacing:.08em;text-align:center}.ended-sub{margin-top:20px;font:10px monospace;letter-spacing:.3em;color:#888}@keyframes pulse{50%{opacity:.25;box-shadow:0 0 2px #fff}}@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}@keyframes blink{50%{opacity:.2}}@keyframes glitch{0%,93%,100%{transform:translateX(0)}94%{transform:translateX(2px)}96%{transform:translateX(-2px)}98%{transform:translateX(1px)}}
+
+/* Редкий фальшивый сбой — короткий, намеренно стилизованный глитч. */
+.crash-screen{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:#050505;color:#f4f4f1;opacity:0;visibility:hidden;pointer-events:none;font-family:monospace;overflow:hidden}
+.crash-screen::before{content:"";position:absolute;inset:-20%;opacity:.2;background:repeating-linear-gradient(0deg,transparent 0 2px,#fff 3px,transparent 4px 6px);mix-blend-mode:screen;animation:crash-scan .12s steps(2,end) infinite}
+.crash-screen::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 0 47%,#fff 48% 49%,transparent 50%);opacity:0}
+.crash-inner{position:relative;z-index:1;width:min(520px,84vw);border-left:2px solid #eee;padding:10px 0 10px 20px;transform:translateX(12px);opacity:0}
+.crash-code{font-size:10px;letter-spacing:.28em;color:#888;margin-bottom:22px}
+.crash-title{font-size:clamp(25px,5vw,48px);font-weight:800;letter-spacing:-.06em;line-height:.95;margin-bottom:18px;text-transform:uppercase}
+.crash-copy{font-size:11px;line-height:1.8;letter-spacing:.08em;color:#aaa;text-transform:uppercase}
+.crash-bar{height:2px;background:#333;width:100%;margin-top:24px;overflow:hidden}
+.crash-bar span{display:block;width:38%;height:100%;background:#eee;animation:recover-bar 1.7s steps(8,end) forwards}
+.crash-screen.active{opacity:1;visibility:visible;animation:crash-in .22s steps(2,end) both}
+.crash-screen.active .crash-inner{opacity:1;transform:translateX(0);transition:opacity .12s,transform .12s}
+.crash-screen.leaving{visibility:visible;opacity:1;animation:crash-out .48s steps(2,end) forwards}
+.crash-screen.leaving::after{opacity:.8;animation:flash-out .48s steps(2,end) forwards}
+.crash-screen.leaving .crash-inner{animation:inner-break .48s steps(2,end) forwards}
+body.crashing .page{animation:page-fail .18s steps(2,end) infinite;filter:contrast(1.7)}
+@keyframes crash-in{0%{clip-path:inset(48% 0 48% 0);filter:invert(1)}55%{clip-path:inset(8% 0 20% 0)}100%{clip-path:inset(0)} }
+@keyframes crash-out{0%{clip-path:inset(0);filter:invert(0)}30%{clip-path:inset(35% 0 42% 0);transform:translateX(-8px);filter:invert(1)}60%{clip-path:inset(72% 0 8% 0);transform:translateX(7px)}100%{clip-path:inset(50% 0 50% 0);opacity:0;visibility:hidden;filter:invert(0)}}
+@keyframes inner-break{25%{transform:translateX(-12px) skewX(8deg);opacity:.5}55%{transform:translateX(18px) skewX(-12deg);opacity:1}100%{transform:translateX(0);opacity:0}}
+@keyframes flash-out{0%,35%{opacity:.9}100%{opacity:0}}
+@keyframes recover-bar{0%{transform:translateX(-110%)}100%{transform:translateX(280%)}}
+@keyframes crash-scan{50%{transform:translateY(3px);opacity:.08}}
+@keyframes page-fail{0%,100%{transform:translate(0)}30%{transform:translate(-2px,1px)}65%{transform:translate(2px,-1px)}}
+@media(prefers-reduced-motion:reduce){.crash-screen::before,.crash-screen.active,.crash-screen.leaving,body.crashing .page{animation:none!important}.crash-screen.leaving{opacity:0;visibility:hidden}}
+
+@media(max-width:520px){.topline{top:20px;left:18px;right:18px;font-size:8px;letter-spacing:.12em}.page{padding-left:14px;padding-right:14px}.moon{width:145px;margin-bottom:25px}.logo{width:88vw;max-height:90px}.eyebrow{font-size:8px;letter-spacing:.25em;margin-bottom:34px}.countdown{gap:9px;margin-bottom:28px}.unit{min-width:44px}.num{font-size:clamp(42px,12vw,62px)}.label{font-size:8px;letter-spacing:.12em;margin-top:11px}.colon{font-size:29px;margin-top:6px}.date{font-size:9px;letter-spacing:.12em}.bottom{left:18px;right:18px;bottom:18px;font-size:7px;letter-spacing:.08em}.line{bottom:53px;width:55vw}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
+</style>
+</head>
+<body><canvas class="rain" id="rain" aria-hidden="true"></canvas><div class="grain"></div><div class="scanlines"></div>
+<main class="page">
+  <div class="topline"><span>RKN / 001</span><span class="status"><i class="dot"></i> Transmission pending</span></div>
+  <img class="moon" src="assets/moon.png" alt="Абстрактная белая луна">
+  <img class="logo glitch" src="assets/raknet-logo.png" alt="Rak-Net">
+  <p class="eyebrow">Ожидание завершится через</p>
+  <section class="countdown" id="countdown" aria-label="Обратный отсчёт">
+    <div class="unit"><div class="num" id="days">00</div><div class="label">Дней</div></div><div class="colon">:</div>
+    <div class="unit"><div class="num" id="hours">00</div><div class="label">Часов</div></div><div class="colon">:</div>
+    <div class="unit"><div class="num" id="minutes">00</div><div class="label">Минут</div></div><div class="colon">:</div>
+    <div class="unit"><div class="num" id="seconds">00</div><div class="label">Секунд</div></div>
+  </section>
+  <div class="date">РЕЛИЗ — <strong>29.10.2026 / 00:00</strong></div>
+  <div class="line"></div>
+  <footer class="bottom"><span>Чёрный экран.<br>Белый шум.</span><span>RAGE RELEASE<br>© RAK-NET 2026</span></footer>
+</main>
+<div class="crash-screen" id="crashScreen" aria-hidden="true" role="status" aria-live="polite">
+  <div class="crash-inner">
+    <div class="crash-code">RKN_SYS // EXCEPTION 0x0000</div>
+    <div class="crash-title">SIGNAL<br>INTERRUPTED</div>
+    <div class="crash-copy">RAK-NET НЕ ОТВЕЧАЕТ<br>ПОПЫТКА ВОССТАНОВЛЕНИЯ СОЕДИНЕНИЯ...</div>
+    <div class="crash-bar"><span></span></div>
+  </div>
+</div>
+<script>
+// Монохромный дождь с аэродинамическим обтеканием курсора.
+(() => {
+  const canvas = document.getElementById('rain');
+  const ctx = canvas.getContext('2d', { alpha: true });
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pointer = { x: -9999, y: -9999, active: false };
+  let w = 0, h = 0, dpr = 1, drops = [];
+  const countFor = () => Math.min(190, Math.max(75, Math.round(w * h / 8500)));
+  const random = (a, b) => a + Math.random() * (b - a);
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 1.6);
+    w = window.innerWidth; h = window.innerHeight;
+    canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = countFor();
+    while (drops.length < n) drops.push(makeDrop(true));
+    drops.length = n;
+  }
+  function makeDrop(initial = false) {
+    return { x: random(0, w), y: initial ? random(0, h) : random(-90, -10),
+      len: random(8, 22), speed: random(3.2, 7.8), drift: random(-.55, .25), alpha: random(.12, .48), bend: 0 };
+  }
+  function movePointer(e) { pointer.x = e.clientX; pointer.y = e.clientY; pointer.active = true; }
+  window.addEventListener('pointermove', movePointer, { passive: true });
+  window.addEventListener('pointerleave', () => { pointer.active = false; }, { passive: true });
+  window.addEventListener('resize', resize, { passive: true });
+  resize();
+  function frame() {
+    ctx.clearRect(0, 0, w, h);
+    for (const p of drops) {
+      let vx = p.drift, vy = p.speed;
+      if (pointer.active) {
+        const dx = p.x - pointer.x, dy = p.y - pointer.y;
+        const dist = Math.hypot(dx, dy) || 1;
+        const radius = 145;
+        if (dist < radius) {
+          // Поток ускоряется и огибает курсор, словно поток воздуха вокруг тела.
+          const influence = Math.pow(1 - dist / radius, 1.45);
+          const nx = dx / dist, ny = dy / dist;
+          const side = (dx * 0.7 + dy * 0.3) >= 0 ? 1 : -1;
+          vx += (-ny * side * 5.2 + nx * 1.8) * influence;
+          vy += (Math.max(-1.5, -ny * 2.2) + Math.abs(nx) * 1.3) * influence;
+        }
+      }
+      p.x += vx; p.y += vy;
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(p.x - vx * .55, p.y - p.len);
+      ctx.strokeStyle = `rgba(235,235,235,${p.alpha})`;
+      ctx.lineWidth = .7;
+      ctx.stroke();
+      if (p.y > h + 30 || p.x < -40 || p.x > w + 40) Object.assign(p, makeDrop());
+    }
+    if (!reduceMotion) requestAnimationFrame(frame);
+  }
+  frame();
+  if (reduceMotion) {
+    // При настройке reduced-motion дождь остаётся статичным и не запускает цикл анимации.
+  }
+})();
+
+// Дедлайн: 29 октября 2026, 00:00 по локальному времени устройства посетителя.
+const deadline = new Date(2026, 9, 29, 0, 0, 0).getTime();
+const pad = n => String(n).padStart(2, '0');
+const fields = {days: document.getElementById('days'), hours: document.getElementById('hours'), minutes: document.getElementById('minutes'), seconds: document.getElementById('seconds')};
+function tick(){let diff=Math.max(0,deadline-Date.now());if(diff<=0){document.getElementById('countdown').innerHTML='<div class="ended">РАКНЕТ<br>УЖЕ ЗДЕСЬ</div>';document.querySelector('.eyebrow').textContent='Ожидание окончено';document.querySelector('.date').textContent='29.10.2026 / 00:00';return;}const d=Math.floor(diff/86400000);diff%=86400000;const h=Math.floor(diff/3600000);diff%=3600000;const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);fields.days.textContent=pad(d);fields.hours.textContent=pad(h);fields.minutes.textContent=pad(m);fields.seconds.textContent=pad(s);}
+tick();setInterval(tick,1000);
+
+// Редкий «падёж» страницы: интервал случайный (20–40 секунд), сбой длится ~1.8–2.8 секунды.
+(() => {
+  const overlay = document.getElementById('crashScreen');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let timer;
+  const random = (min, max) => Math.floor(min + Math.random() * (max - min + 1));
+  function scheduleCrash() {
+    timer = window.setTimeout(() => {
+      overlay.classList.remove('leaving');
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('crashing');
+      const duration = random(1800, 2800);
+      window.setTimeout(() => {
+        overlay.classList.remove('active');
+        overlay.classList.add('leaving');
+        window.setTimeout(() => {
+          overlay.classList.remove('leaving');
+          overlay.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('crashing');
+          scheduleCrash();
+        }, reduced ? 0 : 500);
+      }, duration);
+    }, random(20000, 40000));
+  }
+  scheduleCrash();
+  window.addEventListener('pagehide', () => window.clearTimeout(timer), { once: true });
+})();
+
+</script></body></html>

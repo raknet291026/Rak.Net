@@ -64,10 +64,6 @@ body.crashing .page{animation:page-fail .18s steps(2,end) infinite;filter:contra
 .release-meta{margin-top:17px;color:#aaa;font:10px/1.8 monospace;letter-spacing:.2em;text-transform:uppercase}
 .release-rule{height:1px;width:min(340px,65vw);margin:24px auto;background:linear-gradient(90deg,transparent,#aaa,transparent)}
 .release-note{font:9px/1.8 monospace;letter-spacing:.2em;color:#777;text-transform:uppercase}
-.release-socials{width:min(390px,80vw);margin:0 auto 24px;display:grid;gap:10px;font:10px/1.5 monospace;letter-spacing:.12em;text-transform:uppercase}
-.social-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:11px 13px;border:1px solid #292929;color:#f4f4f1;text-decoration:none;transition:background .2s,border-color .2s}
-.social-row:hover{background:#171717;border-color:#777}.social-label{color:#777}.social-name{text-align:right;overflow-wrap:anywhere}
-@media(max-width:520px){.release-socials{font-size:9px;letter-spacing:.06em}.social-row{padding:10px}}
 .page.online .moon{display:none}
 .page.online .logo{width:min(84vw,720px);max-height:140px;margin-bottom:8px;animation:online-logo .65s steps(3,end) both}
 .page.online .eyebrow,.page.online .countdown,.page.online .date,.page.online .line{display:none}
@@ -107,10 +103,6 @@ body.crashing .page{animation:page-fail .18s steps(2,end) infinite;filter:contra
     <div class="release-online">RAK-NET IS ONLINE</div>
     <div class="release-meta">SIGNAL FOUND / TRACK 001 / 29.10.2026</div>
     <div class="release-rule"></div>
-    <div class="release-socials">
-      <a class="social-row" href="https://soundcloud.com/timofej-tarasenko-898" target="_blank" rel="noopener noreferrer"><span class="social-label">SOUNDCLOUD</span><span class="social-name">Nelin! ↗</span></a>
-      <a class="social-row" href="https://www.youtube.com/@ogbananiogbananiogbanani" target="_blank" rel="noopener noreferrer"><span class="social-label">YOUTUBE</span><span class="social-name">@ogbananiogbananiogbanani ↗</span></a>
-    </div>
     <div class="release-note">СИГНАЛ ПОДТВЕРЖДЁН — СТРАНИЦА РЕЛИЗА АКТИВНА</div>
   </section>
   <div class="line"></div>
@@ -203,7 +195,7 @@ body.crashing .page{animation:page-fail .18s steps(2,end) infinite;filter:contra
 })();
 
 // Дедлайн: 29 октября 2026, 00:00 по локальному времени устройства посетителя.
-const deadline = new Date(2026, 9, 29, 0, 0, 0).getTime();
+const deadline = new Date(2026, 9, 12, 9, 17, 0).getTime();
 const pad = n => String(n).padStart(2, '0');
 const fields = {days: document.getElementById('days'), hours: document.getElementById('hours'), minutes: document.getElementById('minutes'), seconds: document.getElementById('seconds')};
 let releaseStarted = false;

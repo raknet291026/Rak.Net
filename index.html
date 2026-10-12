@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#050505"><meta name="description" content="РАКНЕТ — скоро. 29.10.2026, 00:00.">
-<title>РАКНЕТ — 29.10.26</title>
+<title>РАКНЕТ — RAK-NET IS ONLINE</title>
 <style>
 :root{color-scheme:dark;--white:#f4f4f1;--muted:#777}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#050505;color:var(--white);font-family:Arial,Helvetica,sans-serif}body{min-height:100svh;overflow:hidden}.rain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.72}.grain,.scanlines{position:fixed;inset:0;pointer-events:none;z-index:5}.grain{opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}.scanlines{opacity:.09;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff 4px,transparent 5px 7px);mix-blend-mode:overlay}.page{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 22px 24px;isolation:isolate}.page:before{content:"";position:absolute;width:min(78vw,740px);aspect-ratio:1;top:50%;left:50%;transform:translate(-50%,-55%);background:radial-gradient(circle,rgba(255,255,255,.085),rgba(255,255,255,.025) 36%,transparent 68%);filter:blur(12px);z-index:-1}.topline{position:absolute;top:28px;left:30px;right:30px;display:flex;justify-content:space-between;gap:16px;font:10px/1.4 monospace;letter-spacing:.2em;color:#8b8b8b;text-transform:uppercase}.status{display:flex;align-items:center;gap:9px}.dot{width:6px;height:6px;background:#f4f4f1;border-radius:50%;box-shadow:0 0 12px #fff;animation:pulse 1.8s infinite}.moon{width:clamp(125px,19vw,220px);height:auto;object-fit:contain;filter:drop-shadow(0 0 22px #ffffff22);animation:float 7s ease-in-out infinite;opacity:.94;margin:12px 0 22px}.logo{display:block;width:min(76vw,620px);height:auto;max-height:112px;object-fit:contain;filter:drop-shadow(0 0 15px #fff1);margin:0 auto 14px}.eyebrow{font:10px/1.5 monospace;letter-spacing:.42em;color:#8c8c8c;text-transform:uppercase;margin:0 0 36px 4px}.countdown{display:flex;align-items:flex-start;justify-content:center;gap:clamp(12px,3.4vw,42px);margin:0 0 30px;font-variant-numeric:tabular-nums}.unit{text-align:center;min-width:clamp(48px,8vw,94px)}.num{font-family:Impact,'Arial Narrow',sans-serif;font-size:clamp(46px,9.3vw,108px);line-height:.92;letter-spacing:-.035em;font-weight:400}.label{margin-top:14px;color:#777;font:9px/1 monospace;letter-spacing:.25em;text-transform:uppercase}.colon{font:clamp(30px,6vw,65px)/.8 monospace;color:#666;margin-top:5px;animation:blink 1.2s steps(2,end) infinite}.date{font:11px/1.5 monospace;letter-spacing:.24em;color:#c8c8c8;text-align:center}.date strong{color:#fff;font-weight:400}.bottom{position:absolute;bottom:27px;left:30px;right:30px;display:flex;justify-content:space-between;align-items:end;gap:20px;color:#666;font:9px/1.6 monospace;letter-spacing:.16em;text-transform:uppercase}.bottom span:last-child{text-align:right}.line{position:absolute;left:50%;bottom:68px;transform:translateX(-50%);height:1px;width:min(40vw,300px);background:linear-gradient(90deg,transparent,#777,transparent);opacity:.5}.glitch{animation:glitch 5s infinite}.ended{font-size:clamp(28px,6vw,62px);letter-spacing:.08em;text-align:center}.ended-sub{margin-top:20px;font:10px monospace;letter-spacing:.3em;color:#888}@keyframes pulse{50%{opacity:.25;box-shadow:0 0 2px #fff}}@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}@keyframes blink{50%{opacity:.2}}@keyframes glitch{0%,93%,100%{transform:translateX(0)}94%{transform:translateX(2px)}96%{transform:translateX(-2px)}98%{transform:translateX(1px)}}
 
@@ -34,6 +34,60 @@ body.crashing .page{animation:page-fail .18s steps(2,end) infinite;filter:contra
 
 @media(max-width:520px){.topline{top:20px;left:18px;right:18px;font-size:8px;letter-spacing:.12em}.page{padding-left:14px;padding-right:14px}.moon{width:145px;margin-bottom:25px}.logo{width:88vw;max-height:90px}.eyebrow{font-size:8px;letter-spacing:.25em;margin-bottom:34px}.countdown{gap:9px;margin-bottom:28px}.unit{min-width:44px}.num{font-size:clamp(42px,12vw,62px)}.label{font-size:8px;letter-spacing:.12em;margin-top:11px}.colon{font-size:29px;margin-top:6px}.date{font-size:9px;letter-spacing:.12em}.bottom{left:18px;right:18px;bottom:18px;font-size:7px;letter-spacing:.08em}.line{bottom:53px;width:55vw}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
+
+/* Релизный переход: луна распадается, затем сеть выходит онлайн. */
+.release-screen{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:#030303;color:#f5f5f2;visibility:hidden;opacity:0;pointer-events:none;overflow:hidden;font-family:monospace}
+.release-screen.active{visibility:visible;opacity:1;pointer-events:auto;animation:release-screen-in .35s steps(3,end) both}
+.release-screen.fade-out{animation:release-screen-out .7s steps(4,end) forwards}
+.release-core{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.release-shards{position:relative;width:clamp(145px,24vw,270px);aspect-ratio:1;margin-bottom:26px;filter:drop-shadow(0 0 20px #fff2)}
+.release-shards img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.98;will-change:transform,opacity}
+.shard-a{clip-path:polygon(12% 10%,48% 0,47% 43%,26% 54%,0 40%);--sx:-65px;--sy:-80px;--sr:-22deg}
+.shard-b{clip-path:polygon(48% 0,79% 8%,100% 32%,67% 42%,48% 43%);--sx:85px;--sy:-75px;--sr:24deg}
+.shard-c{clip-path:polygon(0 40%,26% 54%,47% 43%,48% 68%,20% 86%,4% 67%);--sx:-95px;--sy:25px;--sr:-30deg}
+.shard-d{clip-path:polygon(48% 43%,67% 42%,100% 32%,91% 66%,70% 79%,48% 68%);--sx:100px;--sy:20px;--sr:32deg}
+.shard-e{clip-path:polygon(20% 86%,48% 68%,70% 79%,57% 100%,32% 94%);--sx:-30px;--sy:95px;--sr:15deg}
+.shard-f{clip-path:polygon(70% 79%,91% 66%,84% 88%,57% 100%);--sx:70px;--sy:100px;--sr:-18deg}
+.release-screen.active .shard-a{animation:shatter-a 1.5s cubic-bezier(.2,.7,.2,1) .25s forwards}
+.release-screen.active .shard-b{animation:shatter-b 1.5s cubic-bezier(.2,.7,.2,1) .25s forwards}
+.release-screen.active .shard-c{animation:shatter-c 1.5s cubic-bezier(.2,.7,.2,1) .25s forwards}
+.release-screen.active .shard-d{animation:shatter-d 1.5s cubic-bezier(.2,.7,.2,1) .25s forwards}
+.release-screen.active .shard-e{animation:shatter-e 1.5s cubic-bezier(.2,.7,.2,1) .25s forwards}
+.release-screen.active .shard-f{animation:shatter-f 1.5s cubic-bezier(.2,.7,.2,1) .25s forwards}
+.release-kicker{font-size:9px;letter-spacing:.42em;color:#777;text-transform:uppercase;margin-bottom:18px}
+.release-message{font-family:Impact,'Arial Narrow',sans-serif;font-size:clamp(32px,7.8vw,86px);font-weight:400;line-height:.9;letter-spacing:-.035em;text-transform:uppercase;max-width:95vw;text-shadow:0 0 22px #fff2}
+.release-sub{margin-top:20px;min-height:1.5em;font-size:10px;letter-spacing:.25em;line-height:1.8;color:#999;text-transform:uppercase}
+.release-flicker{animation:release-flicker .12s steps(2,end) 4}
+.release-panel{width:min(620px,90vw);margin:22px auto 0;text-align:center;animation:panel-arrive .8s ease-out both}
+.release-panel[hidden]{display:none}
+.release-online{font-family:Impact,'Arial Narrow',sans-serif;font-size:clamp(30px,6.5vw,68px);line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
+.release-meta{margin-top:17px;color:#aaa;font:10px/1.8 monospace;letter-spacing:.2em;text-transform:uppercase}
+.release-rule{height:1px;width:min(340px,65vw);margin:24px auto;background:linear-gradient(90deg,transparent,#aaa,transparent)}
+.release-note{font:9px/1.8 monospace;letter-spacing:.2em;color:#777;text-transform:uppercase}
+.release-socials{width:min(390px,80vw);margin:0 auto 24px;display:grid;gap:10px;font:10px/1.5 monospace;letter-spacing:.12em;text-transform:uppercase}
+.social-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:11px 13px;border:1px solid #292929;color:#f4f4f1;text-decoration:none;transition:background .2s,border-color .2s}
+.social-row:hover{background:#171717;border-color:#777}.social-label{color:#777}.social-name{text-align:right;overflow-wrap:anywhere}
+@media(max-width:520px){.release-socials{font-size:9px;letter-spacing:.06em}.social-row{padding:10px}}
+.page.online .moon{display:none}
+.page.online .logo{width:min(84vw,720px);max-height:140px;margin-bottom:8px;animation:online-logo .65s steps(3,end) both}
+.page.online .eyebrow,.page.online .countdown,.page.online .date,.page.online .line{display:none}
+.page.online .topline .status{color:#f4f4f1}
+.page.online .dot{animation:none}
+.page.online .bottom{color:#888}
+@keyframes release-screen-in{0%{opacity:0;filter:invert(1)}45%{opacity:1;filter:contrast(2)}100%{opacity:1;filter:none}}
+@keyframes release-screen-out{0%{opacity:1;clip-path:inset(0)}25%{opacity:1;clip-path:inset(43% 0 45% 0);filter:invert(1)}55%{opacity:1;clip-path:inset(15% 0 75% 0);transform:translateX(7px)}100%{opacity:0;visibility:hidden;clip-path:inset(50% 0 50% 0);transform:translateX(-8px)}}
+@keyframes shatter-a{to{transform:translate(var(--sx),var(--sy)) rotate(var(--sr)) scale(.8);opacity:0}}
+@keyframes shatter-b{to{transform:translate(var(--sx),var(--sy)) rotate(var(--sr)) scale(.75);opacity:0}}
+@keyframes shatter-c{to{transform:translate(var(--sx),var(--sy)) rotate(var(--sr)) scale(.85);opacity:0}}
+@keyframes shatter-d{to{transform:translate(var(--sx),var(--sy)) rotate(var(--sr)) scale(.8);opacity:0}}
+@keyframes shatter-e{to{transform:translate(var(--sx),var(--sy)) rotate(var(--sr)) scale(.7);opacity:0}}
+@keyframes shatter-f{to{transform:translate(var(--sx),var(--sy)) rotate(var(--sr)) scale(.75);opacity:0}}
+@keyframes release-flicker{0%,100%{opacity:1;transform:translateX(0)}25%{opacity:.2;transform:translateX(-4px)}50%{opacity:1;transform:translateX(5px)}75%{opacity:.5;transform:translateX(-2px)}}
+@keyframes panel-arrive{0%{opacity:0;transform:translateY(14px);filter:blur(5px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes online-logo{0%{opacity:0;transform:scale(.96);filter:blur(6px)}55%{opacity:1;transform:scale(1.015);filter:blur(0) drop-shadow(3px 0 #888)}100%{opacity:1;transform:scale(1);filter:drop-shadow(0 0 16px #fff2)}}
+@media(max-width:520px){.release-shards{width:190px}.release-kicker{font-size:8px;letter-spacing:.25em}.release-sub{font-size:8px;letter-spacing:.16em}.release-panel{margin-top:18px}}
+@media(prefers-reduced-motion:reduce){.release-screen.active,.release-screen.fade-out,.release-screen.active img,.release-panel,.page.online .logo{animation:none!important}.release-screen.fade-out{opacity:0;visibility:hidden}}
+
 </style>
 </head>
 <body><canvas class="rain" id="rain" aria-hidden="true"></canvas><div class="grain"></div><div class="scanlines"></div>
@@ -49,6 +103,16 @@ body.crashing .page{animation:page-fail .18s steps(2,end) infinite;filter:contra
     <div class="unit"><div class="num" id="seconds">00</div><div class="label">Секунд</div></div>
   </section>
   <div class="date">РЕЛИЗ — <strong>29.10.2026 / 00:00</strong></div>
+  <section class="release-panel" id="releasePanel" hidden aria-live="polite">
+    <div class="release-online">RAK-NET IS ONLINE</div>
+    <div class="release-meta">SIGNAL FOUND / TRACK 001 / 29.10.2026</div>
+    <div class="release-rule"></div>
+    <div class="release-socials">
+      <a class="social-row" href="https://soundcloud.com/timofej-tarasenko-898" target="_blank" rel="noopener noreferrer"><span class="social-label">SOUNDCLOUD</span><span class="social-name">Nelin! ↗</span></a>
+      <a class="social-row" href="https://www.youtube.com/@ogbananiogbananiogbanani" target="_blank" rel="noopener noreferrer"><span class="social-label">YOUTUBE</span><span class="social-name">@ogbananiogbananiogbanani ↗</span></a>
+    </div>
+    <div class="release-note">СИГНАЛ ПОДТВЕРЖДЁН — СТРАНИЦА РЕЛИЗА АКТИВНА</div>
+  </section>
   <div class="line"></div>
   <footer class="bottom"><span>Чёрный экран.<br>Белый шум.</span><span>RAGE RELEASE<br>© RAK-NET 2026</span></footer>
 </main>
@@ -58,6 +122,21 @@ body.crashing .page{animation:page-fail .18s steps(2,end) infinite;filter:contra
     <div class="crash-title">SIGNAL<br>INTERRUPTED</div>
     <div class="crash-copy">RAK-NET НЕ ОТВЕЧАЕТ<br>ПОПЫТКА ВОССТАНОВЛЕНИЯ СОЕДИНЕНИЯ...</div>
     <div class="crash-bar"><span></span></div>
+  </div>
+</div>
+<div class="release-screen" id="releaseScreen" aria-hidden="true" role="status" aria-live="assertive">
+  <div class="release-core">
+    <div class="release-kicker" id="releaseKicker">RKN_SYS // CORE FAILURE</div>
+    <div class="release-shards" aria-hidden="true">
+      <img class="shard-a" src="assets/moon.png" alt="">
+      <img class="shard-b" src="assets/moon.png" alt="">
+      <img class="shard-c" src="assets/moon.png" alt="">
+      <img class="shard-d" src="assets/moon.png" alt="">
+      <img class="shard-e" src="assets/moon.png" alt="">
+      <img class="shard-f" src="assets/moon.png" alt="">
+    </div>
+    <div class="release-message" id="releaseMessage">SIGNAL LOST</div>
+    <div class="release-sub" id="releaseSub">MOON CORE UNSTABLE</div>
   </div>
 </div>
 <script>
@@ -127,8 +206,67 @@ body.crashing .page{animation:page-fail .18s steps(2,end) infinite;filter:contra
 const deadline = new Date(2026, 9, 29, 0, 0, 0).getTime();
 const pad = n => String(n).padStart(2, '0');
 const fields = {days: document.getElementById('days'), hours: document.getElementById('hours'), minutes: document.getElementById('minutes'), seconds: document.getElementById('seconds')};
-function tick(){let diff=Math.max(0,deadline-Date.now());if(diff<=0){document.getElementById('countdown').innerHTML='<div class="ended">РАКНЕТ<br>УЖЕ ЗДЕСЬ</div>';document.querySelector('.eyebrow').textContent='Ожидание окончено';document.querySelector('.date').textContent='29.10.2026 / 00:00';return;}const d=Math.floor(diff/86400000);diff%=86400000;const h=Math.floor(diff/3600000);diff%=3600000;const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);fields.days.textContent=pad(d);fields.hours.textContent=pad(h);fields.minutes.textContent=pad(m);fields.seconds.textContent=pad(s);}
-tick();setInterval(tick,1000);
+let releaseStarted = false;
+let countdownInterval;
+function startReleaseSequence() {
+  if (releaseStarted) return;
+  releaseStarted = true;
+  if (countdownInterval) clearInterval(countdownInterval);
+  if (window.__raknetStopCrashes) window.__raknetStopCrashes();
+  document.body.classList.add('release-transition');
+  const overlay = document.getElementById('releaseScreen');
+  const kicker = document.getElementById('releaseKicker');
+  const message = document.getElementById('releaseMessage');
+  const sub = document.getElementById('releaseSub');
+  overlay.classList.add('active');
+  overlay.setAttribute('aria-hidden', 'false');
+  message.classList.add('release-flicker');
+  const phases = [
+    {at: 0, kicker:'RKN_SYS // CORE FAILURE', message:'SIGNAL LOST', sub:'MOON CORE UNSTABLE'},
+    {at: 1700, kicker:'RKN_SYS // REBOOT SEQUENCE', message:'RECONNECTING', sub:'PLEASE STAND BY'},
+    {at: 3500, kicker:'RKN_SYS // SIGNAL ACQUIRED', message:'SIGNAL FOUND', sub:'UNKNOWN SOURCE / TRACK 001'},
+    {at: 5350, kicker:'CONNECTION ESTABLISHED', message:'RAK-NET', sub:'IS ONLINE'}
+  ];
+  phases.forEach(phase => setTimeout(() => {
+    kicker.textContent = phase.kicker;
+    message.textContent = phase.message;
+    sub.textContent = phase.sub;
+    message.classList.remove('release-flicker');
+    void message.offsetWidth;
+    message.classList.add('release-flicker');
+  }, phase.at));
+  setTimeout(() => {
+    overlay.classList.add('fade-out');
+    document.querySelector('.page').classList.add('online');
+    document.querySelector('.topline .status').lastChild.textContent = ' RAK-NET ONLINE';
+    document.querySelector('.eyebrow').textContent = 'Сигнал найден';
+    document.getElementById('countdown').style.display = 'none';
+    document.querySelector('.date').textContent = 'SIGNAL FOUND / 29.10.2026';
+    document.getElementById('releasePanel').hidden = false;
+    document.getElementById('releasePanel').scrollIntoView({block:'nearest',behavior:'auto'});
+    setTimeout(() => {
+      overlay.classList.remove('active','fade-out');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('release-transition');
+    }, 750);
+  }, 7600);
+}
+function tick() {
+  let diff = deadline - Date.now();
+  if (diff <= 0) {
+    fields.days.textContent = '00'; fields.hours.textContent = '00';
+    fields.minutes.textContent = '00'; fields.seconds.textContent = '00';
+    startReleaseSequence();
+    return;
+  }
+  diff = Math.max(0, diff);
+  const d = Math.floor(diff/86400000); diff%=86400000;
+  const h = Math.floor(diff/3600000); diff%=3600000;
+  const m = Math.floor(diff/60000); const s = Math.floor((diff%60000)/1000);
+  fields.days.textContent=pad(d); fields.hours.textContent=pad(h);
+  fields.minutes.textContent=pad(m); fields.seconds.textContent=pad(s);
+}
+tick(); countdownInterval = setInterval(tick, 1000);
 
 // Редкий «падёж» страницы: интервал случайный (20–40 секунд), сбой длится ~1.8–2.8 секунды.
 (() => {
@@ -156,6 +294,7 @@ tick();setInterval(tick,1000);
     }, random(20000, 40000));
   }
   scheduleCrash();
+  window.__raknetStopCrashes = () => window.clearTimeout(timer);
   window.addEventListener('pagehide', () => window.clearTimeout(timer), { once: true });
 })();
 
